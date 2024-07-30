@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import Newsboard from "../components/Newsboard"
 const Dashboard = () => {
 
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Dashboard = () => {
     userValid();
   }, [])
   return (
-    <div>Dashboard</div>
+    <Newsboard category={category}/>
   )
 }
 

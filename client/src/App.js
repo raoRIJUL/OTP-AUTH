@@ -8,11 +8,16 @@ import { Routes, Route } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import { useState } from "react"
+import Navbar from "./components/Navbar"
+import Newsboard from "./components/Newsboard"
 
 function App() {
+  const [category,setCategory]=useState("general");
   return (
     <>
       <Headers />
+      <Navbar setCategory={setCategory}/>
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register />} />
@@ -20,6 +25,8 @@ function App() {
         <Route path='/user/otp' element={<Otp />} />
         <Route path='*' element={<Error />} />
       </Routes>
+      
+
     </>
   );
 }
